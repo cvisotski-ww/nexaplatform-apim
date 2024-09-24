@@ -52,5 +52,16 @@
     - Premium Customers - 1000 requests/min
     - Free Customers - 5 requests/min
 
+# API Key Management Implementation
+- We are currently leveraging Zuplos API Key Api for managing our external Client's Apikeys
+- Each new client that we want to grant access to Nexas External Apis will have a new Consumer Created.
+  - Each consumer will be defined a new Apikey by default
+  - ApiKeys are set to not expire but this can be adjusted and configured.
+  - New consumer will also be assigned some of our defined metadata properties (CustomerType, OrganizationIds)
+  - CustomerType will control rate limiting
+  - OrganizationIds will assist with Data Authorization
+- Buckets will be created to mirror our Nexa Api environments
+  - Dev, QA, Staging, Demo, Production
+
 # Release Runbook
 <hr/>
