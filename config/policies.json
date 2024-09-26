@@ -34,7 +34,7 @@
         "options": {
           "headers": [
             {
-              "name": "Authorization",
+              "name": "fakeZuploApiKey",
               "value": "$env(BACKEND_SECRET)"
             }
           ]
@@ -51,6 +51,22 @@
       },
       "name": "custom-code-inbound",
       "policyType": "custom-code-inbound"
+    },
+    {
+      "handler": {
+        "export": "SetQueryParamsInboundPolicy",
+        "module": "$import(@zuplo/runtime)",
+        "options": {
+          "params": [
+            {
+              "name": "my-key",
+              "value": "my-value"
+            }
+          ]
+        }
+      },
+      "name": "set-query-params-inbound",
+      "policyType": "set-query-params-inbound"
     }
   ]
 }
