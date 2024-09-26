@@ -52,44 +52,43 @@
               "api-key-inbound",
               "rate-limit-inbound",
               "set-headers-inbound",
-              "custom-code-inbound",
-              "set-query-params-inbound"
+              "custom-code-inbound"
             ]
           }
         },
         "operationId": "d0227874-f18c-4984-b806-0c19ca872ce4"
       },
-        "parameters": [
-          {
-            "name": "resourceIds",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
+      "parameters": [
+        {
+          "name": "resourceIds",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string"
             }
-          },
-          {
-            "name": "StartDateTime",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "EndDateTime",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-      }
-    ]
+          }
+        },
+        {
+          "name": "StartDateTime",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        {
+          "name": "EndDateTime",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      ]
     }
   }
 }
