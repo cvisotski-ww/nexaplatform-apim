@@ -1,43 +1,42 @@
-# My API
+# Nexa Developer Documentation
 
-You can write full markdown in these documents. Syntax highlighting and full
-Github Flavored markdown are supported. To learn more about customizing the
-documentation of this developer portal
-[see the documentation](https://zuplo.com/docs/developer-portal/adding-pages).
+## Overview
+**Where Insight Meets Action**  
+Nexa integrates advanced sensing technology with your property, providing non-invasive monitoring of plumbing components. Our solution measures temperature, detects leaks, monitors pressure, and more.
 
-```ts
-const response = await fetch("https://echo.zuplo.io", {
-  headers: {
-    "content-type": "application/json",
-  },
-});
+## Key Features
 
-const data = await response.json();
-console.log(data);
-```
+### Sensing Technology
+- **Integration**: Non-invasive attachment to plumbing components.
+- **Metrics**: Measures various parameters including:
+  - Temperature
+  - Leak detection
+  - Pressure monitoring
 
-## Labore et Dolore
+### Nexa Software
+- **Real-Time Data**: Connects to your sensors to provide live system data.
+- **Insight Generation**: Uncovers hidden insights within your water system.
+- **Issue Resolution**: Identify inefficiencies and troubleshoot problems.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+## Benefits
+With Nexa, you can:
+- Optimize your building’s plumbing from point of entry to point of use.
+- Enhance operational efficiency by leveraging real-time insights.
+- Proactively resolve issues before they escalate.
 
-| Item            | Description                                  | Quanity |
-| --------------- | -------------------------------------------- | ------- |
-| ullamco laboris | reprehenderit in voluptate velit esse cillum | 21      |
-| Excepteur sint  | tempor incididunt ut labore                  | 1       |
-| anim id est     | irure dolor in reprehenderit in voluptate    | 82      |
-| non proiden     | cupidatat non proident, sunt in              | 53      |
+## Getting Started
 
-## Aliquip pariatur
+### Installation
+1. **Set Up Sensors**: Attach the Nexa sensing technology to your plumbing components.
+2. **Connect to Software**: Install the Nexa software to begin receiving data.
 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-deserunt mollit anim id est laborum.
+### Usage
+1. Access the Nexa dashboard to view real-time data.
+2. Monitor key metrics and receive alerts for any detected issues.
 
-- **Item 1** - ullamco laboris nisi ut aliquip ex ea commodo
-- **Item 2** - ullamco laboris nisi ut aliquip ex ea commodo
-- **Item 3** - ullamco laboris nisi ut aliquip ex ea commodo
-- **Item 4** - ullamco laboris nisi ut aliquip ex ea commodo
+## Support
+For further assistance, please visit our [support page](https://www.nexaplatform.com/support) or contact us at [support@nexaplatform.com](mailto:support@nexaplatform.com).
+
+## Contributing
+We welcome contributions! For guidelines on how to contribute, please refer to our [contributing page](https://www.nexaplatform.com/contributing).
+
