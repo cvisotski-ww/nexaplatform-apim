@@ -5,7 +5,6 @@ context: ZuploContext) {
 
  const orgIds = request.user.data.organizationIds;
  const updatedUrl = new URL(request.url);
- updatedUrl.searchParams.append('organizationIds', orgIds);
  request.headers.append("organizationIds",orgIds);
  return new ZuploRequest(updatedUrl.toString(), request);
 }

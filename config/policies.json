@@ -34,7 +34,7 @@
         "options": {
           "headers": [
             {
-              "name": "fakeZuploApiKey",
+              "name": "ApiKey",
               "value": "$env(BACKEND_SECRET)"
             }
           ]
