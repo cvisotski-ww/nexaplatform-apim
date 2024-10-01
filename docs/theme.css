@@ -1,7 +1,7 @@
 /* Learn about theming here: https://zuplo.com/docs/developer-portal/theme */
 
 :root {
-  --logo-url: url(https://app.nexaplatform.com/nexa_logo.png);
+  --logo-url: url(https://app.nexaplatform.com/nexa_favicon.svg);
 }
 
 .light {

@@ -1,0 +1,58 @@
+{
+"components": {
+        "schemas": {
+            "Vendor.Models.VendorApi.WaterUsageDto": {
+                "type": "object",
+                "properties": {
+                "startDateTime": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "endDateTime": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "waterResources": {
+                    "type": "array",
+                    "items": {
+                    "$ref": "#components/schemas/Vendor.Models.VendorApi.WaterUsageDto+WaterResource"
+                    },
+                    "nullable": true
+                }
+                },
+                "additionalProperties": false
+            },
+            "Vendor.Models.VendorApi.WaterUsageDto+WaterResource": {
+                "type": "object",
+                "properties": {
+                "id": {
+                    "type": "string",
+                    "nullable": true
+                },
+                "tag": {
+                    "type": "string",
+                    "nullable": true
+                },
+                "datapointName": {
+                    "type": "string",
+                    "nullable": true
+                },
+                "datapointValue": {
+                    "type": "number",
+                    "format": "double",
+                    "nullable": true
+                },
+                "uom": {
+                    "type": "string",
+                    "nullable": true
+                },
+                "eventDateTime": {
+                    "type": "string",
+                    "format": "date-time"
+                }
+                },
+                "additionalProperties": false
+            }
+        }
+    }
+}
