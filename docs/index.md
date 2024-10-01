@@ -1,6 +1,4 @@
-# Nexa Developer Documentation
-
-<img src="https://app.nexaplatform.com/nexa_logo.svg" alt="drawing" width="800"/>
+<img src="https://app.nexaplatform.com/nexa_logo.svg" alt="drawing" width="600"/>
 
 ## Overview
 **Where Insight Meets Action**  
