@@ -1,175 +1,175 @@
 {
   "info": {
-    "title": "Nexa Developer APIs",
-    "description":"Our suite of APIs for accessing your Organization's sensor telemetry data. To begin integrating with our APIs provide your API Key found in the Integration Hub tab within Organization Settings found [here](https://app-dev.nexaplatform.com/settings/organization).",
-    "version": "1.0"
+      "title": "Nexa Developer APIs",
+      "description": "Our suite of APIs for accessing your Organization's sensor telemetry data. To begin integrating with our APIs provide your API Key found in the Integration Hub tab within Organization Settings found [here](https://app-dev.nexaplatform.com/settings/organization).",
+      "version": "1.0"
   },
   "components": {
-        "schemas": {
-            "Vendor.Models.VendorApi.WaterUsageDto": {
-                "type": "object",
-                "properties": {
-                "startDateTime": {
-                    "type": "string",
-                    "format": "date-time"
-                },
-                "endDateTime": {
-                    "type": "string",
-                    "format": "date-time"
-                },
-                "waterResources": {
-                    "type": "array",
-                    "items": {
-                    "$ref": "#components/schemas/Vendor.Models.VendorApi.WaterUsageResourceDto"
-                    },
-                    "nullable": true
-                }
-                },
-                "additionalProperties": false
-            },
-            "Vendor.Models.VendorApi.WaterUsageResourceDto": {
-                "type": "object",
-                "properties": {
-                "id": {
-                    "type": "string",
-                    "nullable": true
-                },
-                "tag": {
-                    "type": "string",
-                    "nullable": true
-                },
-                "datapointName": {
-                    "type": "string",
-                    "nullable": true
-                },
-                "datapointValue": {
-                    "type": "number",
-                    "format": "double",
-                    "nullable": true
-                },
-                "uom": {
-                    "type": "string",
-                    "nullable": true
-                },
-                "eventDateTime": {
-                    "type": "string",
-                    "format": "date-time"
-                }
-                },
-                "additionalProperties": false
-            }
-        }
+      "schemas": {
+          "WaterUsageDto": {
+              "type": "object",
+              "properties": {
+                  "startDateTime": {
+                      "type": "string",
+                      "format": "date-time"
+                  },
+                  "endDateTime": {
+                      "type": "string",
+                      "format": "date-time"
+                  },
+                  "waterResources": {
+                      "type": "array",
+                      "items": {
+                          "$ref": "#components/schemas/WaterUsageResourceDto"
+                      },
+                      "nullable": true
+                  }
+              },
+              "additionalProperties": false
+          },
+          "WaterUsageResourceDto": {
+              "type": "object",
+              "properties": {
+                  "id": {
+                      "type": "string",
+                      "nullable": true
+                  },
+                  "tag": {
+                      "type": "string",
+                      "nullable": true
+                  },
+                  "datapointName": {
+                      "type": "string",
+                      "nullable": true
+                  },
+                  "datapointValue": {
+                      "type": "number",
+                      "format": "double",
+                      "nullable": true
+                  },
+                  "uom": {
+                      "type": "string",
+                      "nullable": true
+                  },
+                  "eventDateTime": {
+                      "type": "string",
+                      "format": "date-time"
+                  }
+              },
+              "additionalProperties": false
+          }
+      }
   },
   "paths": {
-    "/status": {
-      "x-zuplo-path": {
-        "pathMode": "open-api"
-      },
-      "get": {
-        "summary": "Status",
-        "description": "Query the health status of the Nexa Application to perform any automated healthchecks.",
-        "x-zuplo-route": {
-          "corsPolicy": "none",
-          "handler": {
-            "export": "urlRewriteHandler",
-            "module": "$import(@zuplo/runtime)",
-            "options": {
-              "rewritePattern": "${env.BASE_URL}/status"
-            }
+      "/status": {
+          "x-zuplo-path": {
+              "pathMode": "open-api"
           },
-          "policies": {
-            "inbound": [
-              "api-key-inbound",
-              "rate-limit-inbound",
-              "set-headers-inbound"
-            ]
-          }
-        },
-        "responses":{
-          "200" : {
-            "description": "Ok Response",
-            "content":{
-              "application/json":{
-                "schema":{
-                  "type":"string"
-                }
+          "get": {
+              "summary": "Status",
+              "description": "Query the health status of the Nexa Application to perform any automated healthchecks.",
+              "x-zuplo-route": {
+                  "corsPolicy": "none",
+                  "handler": {
+                      "export": "urlRewriteHandler",
+                      "module": "$import(@zuplo/runtime)",
+                      "options": {
+                          "rewritePattern": "${env.BASE_URL}/status"
+                      }
+                  },
+                  "policies": {
+                      "inbound": [
+                          "api-key-inbound",
+                          "rate-limit-inbound",
+                          "set-headers-inbound"
+                      ]
+                  }
+              },
+              "operationId": "c9cfe222-a0a8-467c-a306-3c42b6c51648",
+              "responses": {
+                  "200": {
+                      "description": "Ok Response",
+                      "content": {
+                          "application/json": {
+                              "schema": {
+                                  "type": "string"
+                              }
+                          }
+                      }
+                  }
               }
-            }
           }
-        },
-         "operationId": "c9cfe222-a0a8-467c-a306-3c42b6c51648"
-      }
-    },
-    "/usage/water": {
-      "x-zuplo-path": {
-        "pathMode": "open-api"
       },
-      "get": {
-        "summary": "Water Usage",
-        "description": "Query water usage in volume (GALLONS) from your Nexa Organization.",
-        "x-zuplo-route": {
-          "corsPolicy": "none",
-          "handler": {
-            "export": "urlRewriteHandler",
-            "module": "$import(@zuplo/runtime)",
-            "options": {
-              "rewritePattern": "${env.BASE_URL}/usage/water"
-            }
+      "/usage/water": {
+          "x-zuplo-path": {
+              "pathMode": "open-api"
           },
-          "policies": {
-            "inbound": [
-              "api-key-inbound",
-              "rate-limit-inbound",
-              "set-headers-inbound",
-              "custom-code-inbound"
-            ]
-          }
-        },
-        "operationId": "d0227874-f18c-4984-b806-0c19ca872ce4"
-      },
-      "parameters": [
-        {
-          "name": "resourceIds",
-          "in": "query",
-          "required": false,
-          "schema": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        },
-        {
-          "name": "StartDateTime",
-          "in": "query",
-          "required": true,
-          "schema": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        {
-          "name": "EndDateTime",
-          "in": "query",
-          "required": true,
-          "schema": {
-            "type": "string",
-            "format": "date-time"
-          }
-        }
-      ],
-      "responses":{
-        "200" : {
-          "description": "Ok Response",
-          "content":{
-            "application/json":{
-              "schema":{
-                "$ref":"#components/schemas/Vendor.Models.VendorApi.WaterUsageDto"
+          "get": {
+              "summary": "Water Usage",
+              "description": "Query water usage in volume (GALLONS) from your Nexa Organization.",
+              "x-zuplo-route": {
+                  "corsPolicy": "none",
+                  "handler": {
+                      "export": "urlRewriteHandler",
+                      "module": "$import(@zuplo/runtime)",
+                      "options": {
+                          "rewritePattern": "${env.BASE_URL}/usage/water"
+                      }
+                  },
+                  "policies": {
+                      "inbound": [
+                          "api-key-inbound",
+                          "rate-limit-inbound",
+                          "set-headers-inbound",
+                          "custom-code-inbound"
+                      ]
+                  }
+              },
+              "operationId": "d0227874-f18c-4984-b806-0c19ca872ce4"
+          },
+          "parameters": [
+              {
+                  "name": "resourceIds",
+                  "in": "query",
+                  "required": false,
+                  "schema": {
+                      "type": "array",
+                      "items": {
+                          "type": "string"
+                      }
+                  }
+              },
+              {
+                  "name": "StartDateTime",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                      "type": "string",
+                      "format": "date-time"
+                  }
+              },
+              {
+                  "name": "EndDateTime",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                      "type": "string",
+                      "format": "date-time"
+                  }
               }
-            }
+          ],
+          "responses": {
+              "200": {
+                  "description": "Ok Response",
+                  "content": {
+                      "application/json": {
+                          "schema": {
+                              "$ref": "#components/schemas/WaterUsageDto"
+                          }
+                      }
+                  }
+              }
           }
-        }
       }
-    }
   }
 }
