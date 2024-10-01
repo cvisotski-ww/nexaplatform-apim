@@ -13,7 +13,7 @@
       "waterResources": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Vendor.Models.VendorApi.WaterUsageDto+WaterResource"
+          "$ref": "#/schemas/Vendor.Models.VendorApi.WaterUsageDto+WaterResource"
         },
         "nullable": true
       }
