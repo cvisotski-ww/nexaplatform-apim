@@ -89,7 +89,19 @@
             "format": "date-time"
           }
         }
-      ]
+      ],
+      "responses":{
+        "200" : {
+          "description": "Ok Response",
+          "content":{
+            "application/json":{
+              "schema":{
+                "$ref":"../schemas/water-usage-resources.json"
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
