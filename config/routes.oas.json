@@ -4,6 +4,62 @@
     "description":"Our suite of APIs for accessing your Organization's sensor telemetry data. To begin integrating with our APIs provide your API Key found in the Integration Hub tab within Organization Settings found [here](https://app-dev.nexaplatform.com/settings/organization).",
     "version": "1.0"
   },
+  "components": {
+        "schemas": {
+            "Vendor.Models.VendorApi.WaterUsageDto": {
+                "type": "object",
+                "properties": {
+                "startDateTime": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "endDateTime": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "waterResources": {
+                    "type": "array",
+                    "items": {
+                    "$ref": "#components/schemas/Vendor.Models.VendorApi.WaterUsageResourceDto"
+                    },
+                    "nullable": true
+                }
+                },
+                "additionalProperties": false
+            },
+            "Vendor.Models.VendorApi.WaterUsageResourceDto": {
+                "type": "object",
+                "properties": {
+                "id": {
+                    "type": "string",
+                    "nullable": true
+                },
+                "tag": {
+                    "type": "string",
+                    "nullable": true
+                },
+                "datapointName": {
+                    "type": "string",
+                    "nullable": true
+                },
+                "datapointValue": {
+                    "type": "number",
+                    "format": "double",
+                    "nullable": true
+                },
+                "uom": {
+                    "type": "string",
+                    "nullable": true
+                },
+                "eventDateTime": {
+                    "type": "string",
+                    "format": "date-time"
+                }
+                },
+                "additionalProperties": false
+            }
+        }
+  },
   "paths": {
     "/status": {
       "x-zuplo-path": {
@@ -29,7 +85,19 @@
             ]
           }
         },
-        "operationId": "c9cfe222-a0a8-467c-a306-3c42b6c51648"
+        "responses":{
+          "200" : {
+            "description": "Ok Response",
+            "content":{
+              "application/json":{
+                "schema":{
+                  "type":"string"
+                }
+              }
+            }
+          }
+        },
+         "operationId": "c9cfe222-a0a8-467c-a306-3c42b6c51648"
       }
     },
     "/usage/water": {
@@ -96,7 +164,7 @@
           "content":{
             "application/json":{
               "schema":{
-                "$ref":"../schemas/water-usage-resources.json"
+                "$ref":"#components/schemas/Vendor.Models.VendorApi.WaterUsageDto"
               }
             }
           }
