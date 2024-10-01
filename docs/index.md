@@ -1,8 +1,11 @@
 # Nexa Developer Documentation
 
+<img src="./Images/NexaHomeScreen.png" alt="drawing" width="800"/>
+
 ## Overview
 **Where Insight Meets Action**  
 Nexa integrates advanced sensing technology with your property, providing non-invasive monitoring of plumbing components. Our solution measures temperature, detects leaks, monitors pressure, and more.
+
 
 ## Key Features
 
@@ -12,6 +15,7 @@ Nexa integrates advanced sensing technology with your property, providing non-in
   - Temperature
   - Leak detection
   - Pressure monitoring
+  - Water Volume
 
 ### Nexa Software
 - **Real-Time Data**: Connects to your sensors to provide live system data.
@@ -33,6 +37,10 @@ With Nexa, you can:
 ### Usage
 1. Access the Nexa dashboard to view real-time data.
 2. Monitor key metrics and receive alerts for any detected issues.
+
+## Integrations
+1. Leverage realtime analytics webhooks into your own application from the Nexa platform.
+2. Request Telemetry data from our Suite of developer grade API's.
 
 ## Support
 For further assistance, please visit our [support page](https://www.nexaplatform.com/support) or contact us at [support@nexaplatform.com](mailto:support@nexaplatform.com).

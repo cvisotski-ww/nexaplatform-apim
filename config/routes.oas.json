@@ -1,6 +1,7 @@
 {
   "info": {
-    "title": "Nexa Apim",
+    "title": "Nexa Developer APIs",
+    "description":"Our suite of APIs for accessing your Organization's sensor telemetry data. To begin integrating with our APIs provide your API Key found in the Integration Hub tab within Organization Settings.",
     "version": "1.0"
   },
   "paths": {
@@ -10,7 +11,7 @@
       },
       "get": {
         "summary": "Status",
-        "description": "Super awesome api for getting water usage in volume from Nexa.",
+        "description": "Query the health status of the Nexa Application",
         "x-zuplo-route": {
           "corsPolicy": "none",
           "handler": {
@@ -37,7 +38,7 @@
       },
       "get": {
         "summary": "Water Usage",
-        "description": "Lorem ipsum dolor sit amet, **consectetur adipiscing** elit, sed do `eiusmod tempor` incididunt ut labore et dolore magna aliqua.",
+        "description": "Query water usage in volume (GALLONS) from your Nexa Organization.",
         "x-zuplo-route": {
           "corsPolicy": "none",
           "handler": {
