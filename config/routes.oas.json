@@ -1,7 +1,7 @@
 {
   "info": {
     "title": "Nexa Developer APIs",
-    "description":"Our suite of APIs for accessing your Organization's sensor telemetry data. To begin integrating with our APIs provide your API Key found in the Integration Hub tab within Organization Settings.",
+    "description":"Our suite of APIs for accessing your Organization's sensor telemetry data. To begin integrating with our APIs provide your API Key found in the Integration Hub tab within Organization Settings found [here](https://app-dev.nexaplatform.com/settings/organization).",
     "version": "1.0"
   },
   "paths": {
