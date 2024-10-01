@@ -11,7 +11,7 @@
       },
       "get": {
         "summary": "Status",
-        "description": "Query the health status of the Nexa Application",
+        "description": "Query the health status of the Nexa Application to perform any automated healthchecks.",
         "x-zuplo-route": {
           "corsPolicy": "none",
           "handler": {
