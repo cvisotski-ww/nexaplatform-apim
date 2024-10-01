@@ -164,7 +164,7 @@
                   "content": {
                       "application/json": {
                           "schema": {
-                              "$ref": "#components/schemas/WaterUsageDto"
+                              "type": "string"
                           }
                       }
                   }
