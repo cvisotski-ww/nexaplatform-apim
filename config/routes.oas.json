@@ -61,9 +61,6 @@
   },
   "paths": {
       "/status": {
-          "x-zuplo-path": {
-              "pathMode": "open-api"
-          },
           "get": {
               "summary": "Status",
               "description": "Query the health status of the Nexa Application to perform any automated healthchecks.",
@@ -100,9 +97,6 @@
           }
       },
       "/usage/water": {
-          "x-zuplo-path": {
-              "pathMode": "open-api"
-          },
           "get": {
               "summary": "Water Usage",
               "description": "Query water usage in volume (GALLONS) from your Nexa Organization.",
@@ -164,30 +158,8 @@
                       "application/json": {
                           "schema": {
                             "$ref":"#/components/schemas/WaterUsageDto"
-                          },
-                          "example": {
-                                  "startDateTime":"2020-01-01T00:00:00",
-                                  "endDateTime":"2030-01-01T00:00:00",
-                                  "waterResources":[
-                                    {
-                                      "id":"monnit-17171",
-                                      "tag":"FlowMeter",
-                                      "datapointName":"FlowVolume",
-                                      "datapointValue":13.340686000000002,
-                                      "uom":"GAL",
-                                      "eventDateTime":"2024-09-17T08:48:24Z"
-                                    },
-                                    {
-                                      "id":"monnit-17171",
-                                      "tag":"FlowMeter",
-                                      "datapointName":"FlowVolume",
-                                      "datapointValue":13.736944000000001,
-                                      "uom":"GAL",
-                                      "eventDateTime":"2024-09-17T08:48:24Z"
-                                    }
-                                  ]
-                                }
                           }
+                        }
                       }
                   }
               }
