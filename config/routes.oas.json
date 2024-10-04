@@ -1,198 +1,204 @@
 {
   "info": {
-      "title": "Nexa Developer APIs",
-      "description": "Our suite of APIs for accessing your Organization's sensor telemetry data. To begin integrating with our APIs provide your API Key found in the Integration Hub tab within Organization Settings found [here](https://app-dev.nexaplatform.com/settings/organization).",
-      "version": "1.0"
+    "title": "Nexa Developer APIs",
+    "description": "Our suite of APIs for accessing your Organization's sensor telemetry data. To begin integrating with our APIs provide your API Key found in the Integration Hub tab within Organization Settings found [here](https://app-dev.nexaplatform.com/settings/organization).",
+    "version": "1.0"
   },
   "components": {
-      "schemas": {
-          "WaterUsageDto": {
-              "type": "object",
-              "properties": {
-                  "startDateTime": {
-                      "type": "string",
-                      "format": "date-time"
-                  },
-                  "endDateTime": {
-                      "type": "string",
-                      "format": "date-time"
-                  },
-                  "waterResources": {
-                      "type": "array",
-                      "items": {
-                          "$ref": "#components/schemas/WaterUsageResourceDto"
-                      },
-                      "nullable": true
-                  }
-              },
-              "examples":[
-                {
-                  "startDateTime":"2020-01-01T00:00:00",
-                  "endDateTime":"2030-01-01T00:00:00",
-                  "waterResources":[
-                    {
-                      "id":"monnit-17171",
-                      "tag":"FlowMeter",
-                      "datapointName":"FlowVolume",
-                      "datapointValue":13.340686000000002,
-                      "uom":"GAL",
-                      "eventDateTime":"2024-09-17T08:48:24Z"
-                    },
-                    {
-                      "id":"monnit-17171",
-                      "tag":"FlowMeter",
-                      "datapointName":"FlowVolume",
-                      "datapointValue":13.736944000000001,
-                      "uom":"GAL",
-                      "eventDateTime":"2024-09-17T08:48:24Z"
-                    }
-                  ]
-                }
-            ]
+    "schemas": {
+      "WaterUsageDto": {
+        "type": "object",
+        "properties": {
+          "startDateTime": {
+            "type": "string",
+            "format": "date-time"
           },
-          "WaterUsageResourceDto": {
-              "type": "object",
-              "properties": {
-                  "id": {
-                      "type": "string",
-                      "nullable": true
-                  },
-                  "tag": {
-                      "type": "string",
-                      "nullable": true
-                  },
-                  "datapointName": {
-                      "type": "string",
-                      "nullable": true
-                  },
-                  "datapointValue": {
-                      "type": "number",
-                      "format": "double",
-                      "nullable": true
-                  },
-                  "uom": {
-                      "type": "string",
-                      "nullable": true
-                  },
-                  "eventDateTime": {
-                      "type": "string",
-                      "format": "date-time"
-                  }
-              },
-              "additionalProperties": false
+          "endDateTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "waterResources": {
+            "type": "array",
+            "items": {
+              "$ref": "#components/schemas/WaterUsageResourceDto"
+            },
+            "nullable": true
           }
+        },
+        "examples": [
+          {
+            "startDateTime": "2020-01-01T00:00:00",
+            "endDateTime": "2030-01-01T00:00:00",
+            "waterResources": [
+              {
+                "id": "monnit-17171",
+                "tag": "FlowMeter",
+                "datapointName": "FlowVolume",
+                "datapointValue": 13.340686000000002,
+                "uom": "GAL",
+                "eventDateTime": "2024-09-17T08:48:24Z"
+              },
+              {
+                "id": "monnit-17171",
+                "tag": "FlowMeter",
+                "datapointName": "FlowVolume",
+                "datapointValue": 13.736944000000001,
+                "uom": "GAL",
+                "eventDateTime": "2024-09-17T08:48:24Z"
+              }
+            ]
+          }
+        ]
+      },
+      "WaterUsageResourceDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "tag": {
+            "type": "string",
+            "nullable": true
+          },
+          "datapointName": {
+            "type": "string",
+            "nullable": true
+          },
+          "datapointValue": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "uom": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventDateTime": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
       }
+    }
   },
   "paths": {
-      "/status": {
-          "x-zuplo-path": {
-              "pathMode": "open-api"
-          },
-          "get": {
-              "summary": "Status",
-              "description": "Query the health status of the Nexa Application to perform any automated healthchecks.",
-              "x-zuplo-route": {
-                  "corsPolicy": "none",
-                  "handler": {
-                      "export": "urlRewriteHandler",
-                      "module": "$import(@zuplo/runtime)",
-                      "options": {
-                          "rewritePattern": "${env.BASE_URL}/status"
-                      }
-                  },
-                  "policies": {
-                      "inbound": [
-                          "api-key-inbound",
-                          "rate-limit-inbound",
-                          "set-headers-inbound"
-                      ]
-                  }
-              },
-              "operationId": "c9cfe222-a0a8-467c-a306-3c42b6c51648",
-              "responses": {
-                  "200": {
-                      "description": "Ok Response",
-                      "content": {
-                          "application/json": {
-                              "schema": {
-                                  "type": "string"
-                              }
-                          }
-                      }
-                  }
-              }
-          }
+    "/status": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
       },
-      "/usage/water": {
-          "x-zuplo-path": {
-              "pathMode": "open-api"
+      "get": {
+        "summary": "Status",
+        "description": "Query the health status of the Nexa Application to perform any automated healthchecks.",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlRewriteHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "rewritePattern": "${env.BASE_URL}/status"
+            }
           },
-          "get": {
-              "summary": "Water Usage",
-              "description": "Query water usage in volume (GALLONS) from your Nexa Organization.",
-              "x-zuplo-route": {
-                  "corsPolicy": "none",
-                  "handler": {
-                      "export": "urlRewriteHandler",
-                      "module": "$import(@zuplo/runtime)",
-                      "options": {
-                          "rewritePattern": "${env.BASE_URL}/usage/water"
-                      }
-                  },
-                  "policies": {
-                      "inbound": [
-                          "api-key-inbound",
-                          "rate-limit-inbound",
-                          "set-headers-inbound",
-                          "custom-code-inbound"
-                      ]
-                  }
-              },
-              "operationId": "d0227874-f18c-4984-b806-0c19ca872ce4"
-          },
-          "parameters": [
-              {
-                  "name": "resourceIds",
-                  "in": "query",
-                  "required": false,
-                  "schema": {
-                      "type": "array",
-                      "items": {
-                          "type": "string"
-                      }
-                  }
-              },
-              {
-                  "name": "StartDateTime",
-                  "in": "query",
-                  "required": true,
-                  "schema": {
-                      "type": "string",
-                      "format": "date-time"
-                  }
-              },
-              {
-                  "name": "EndDateTime",
-                  "in": "query",
-                  "required": true,
-                  "schema": {
-                      "type": "string",
-                      "format": "date-time"
-                  }
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "Ok Response",
-                  "content": {
-                      "application/json": {
-                          "schema": {
-                            "type": "string"
-                          }
-                      }
-                  }
-              }
+          "policies": {
+            "inbound": [
+              "api-key-inbound",
+              "rate-limit-inbound",
+              "set-headers-inbound"
+            ],
+            "outbound": [
+              "custom-code-outbound"
+            ]
           }
+        },
+        "operationId": "c9cfe222-a0a8-467c-a306-3c42b6c51648",
+        "responses": {
+          "200": {
+            "description": "Ok Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
       }
+    },
+    "/usage/water": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "Water Usage",
+        "description": "Query water usage in volume (GALLONS) from your Nexa Organization.",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlRewriteHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "rewritePattern": "${env.BASE_URL}/usage/water"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "api-key-inbound",
+              "rate-limit-inbound",
+              "set-headers-inbound",
+              "organizationid-custom-code-inbound"
+            ],
+            "outbound": [
+              "custom-code-outbound"
+            ]
+          }
+        },
+        "operationId": "d0227874-f18c-4984-b806-0c19ca872ce4"
+      },
+      "parameters": [
+        {
+          "name": "resourceIds",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "name": "StartDateTime",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        {
+          "name": "EndDateTime",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Ok Response",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
