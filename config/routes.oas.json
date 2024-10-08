@@ -20,7 +20,7 @@
           "waterResources": {
             "type": "array",
             "items": {
-              "$ref": "#components/schemas/WaterUsageResourceDto"
+              "$ref": "#/components/schemas/WaterUsageResourceDto"
             },
             "nullable": true
           }
@@ -193,7 +193,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "string"
+                "$ref": "#/components/schemas/WaterUsageDto"
               }
             }
           }
