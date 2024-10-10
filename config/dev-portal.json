@@ -2,5 +2,6 @@
   "$schema": "https://cdn.zuplo.com/schemas/dev-portal.json",
   "enabled": true,
   "enableAuthentication": false,
-  "faviconUrl":"https://app.nexaplatform.com/nexa_favicon.svg"
+  "faviconUrl":"https://app.nexaplatform.com/nexa_favicon.svg",
+  "generateExamples": true
 }

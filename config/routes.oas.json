@@ -84,48 +84,6 @@
     }
   },
   "paths": {
-    "/status": {
-      "x-zuplo-path": {
-        "pathMode": "open-api"
-      },
-      "get": {
-        "summary": "Status",
-        "description": "Query the health status of the Nexa Application to perform any automated healthchecks.",
-        "x-zuplo-route": {
-          "corsPolicy": "none",
-          "handler": {
-            "export": "urlRewriteHandler",
-            "module": "$import(@zuplo/runtime)",
-            "options": {
-              "rewritePattern": "${env.BASE_URL}/status"
-            }
-          },
-          "policies": {
-            "inbound": [
-              "api-key-inbound",
-              "rate-limit-inbound",
-              "set-headers-inbound"
-            ],
-            "outbound": [
-              "custom-code-outbound"
-            ]
-          }
-        },
-        "operationId": "c9cfe222-a0a8-467c-a306-3c42b6c51648",
-        "responses": {
-          "200": {
-            "description": "Ok Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/usage/water": {
       "x-zuplo-path": {
         "pathMode": "open-api"
