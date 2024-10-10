@@ -12,11 +12,11 @@ export default async function policy(
   policyName: string
 ) {
 
-  response.ok === false
+  response.ok == false
   {
     context.log.error({
     status: response.status,
-    headers: response.headers,
+    headers: request.headers,
   });
   }
   
