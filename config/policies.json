@@ -6,7 +6,8 @@
         "module": "$import(@zuplo/runtime)",
         "options": {
           "allowUnauthenticatedRequests": false,
-          "cacheTtlSeconds": 60
+          "cacheTtlSeconds": 60,
+          "logging": true
         }
       },
       "name": "api-key-inbound",
@@ -49,8 +50,17 @@
         "module": "$import(./modules/forwardOrganizationIds)",
         "options": {}
       },
-      "name": "custom-code-inbound",
+      "name": "organizationid-custom-code-inbound",
       "policyType": "custom-code-inbound"
+    },
+    {
+      "handler": {
+        "export": "default",
+        "module": "$import(./modules/errorLoggerOutbound)",
+        "options": {}
+      },
+      "name": "custom-code-outbound",
+      "policyType": "custom-code-outbound"
     }
   ]
 }
